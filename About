@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{
+	background-color: white;
+	font-family: Helvetica;
+	font-size: 14px;
+}
+.boxevents{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+.navigation{
+	text-decoration: none;
+	color: white;
+}
+.header{
+         border-radius:10px;
+        background: #8AC007;
+	font-family: Helvetica;
+	font-size: 40px;
+	text-align: centre;
+}
+.logo {
+    
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:0 0 ;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+.boxnews {
+         border-radius:10px;
+        background: #8AC007;
+	float:left;
+	width:70%;
+	height:1800px;
+	padding:10px;
+	border:3px solid black;
+	margin:0px;
+}
+.boxevents {
+         background: #8AC007;
+         border-radius:10px;
+	float:right;
+	width:25%;
+	height:1800px;
+	padding:10px;
+	border:3px solid black;
+	margin:0px;
+}
+.footer {
+color: white;
+}
+.grow { transition: all .1s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+		</style>
+		</head>
+<body>
+<div class = "header">
+<header>
+
+<img src = "Logo.png" alt = "Website Logo" width = "80" height = "80" class = "logo">About
+
+</header>
+</div>
+<hr>
+<div class = "navigation">
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href = "Index.html" style = "text-decoration: none;color:blue"> Home |</a> &nbsp
+
+<a href = "About.html" style = "text-decoration: none;color:blue">| About |</a> &nbsp
+<a href = "Gallery.html" style = "text-decoration: none;color:blue">| Gallery |</a> &nbsp
+<a href = "Contact.html" style = "text-decoration: none;color:blue">| Contact </a> 
+<a href = "http://www.facebook.com" target="_blank"style = "text-decoration: none;color:blue">| Facebook </a>
+</div>
+<hr>
+
+<div class = "wrapper">
+<div class="boxnews"> <br>	
+<head>
+<title>Resume</title>
+<style type="text/css">
+body,table,tr,td {	
+	background-image: url("bb.jpg"); 
+	font-family: Helvetica;
+	font-size: 14px;
+}
+		</style>
+		</head>
+<body>
+<div class="grow"style="text-align:center;">
+<img src="mohsin.jpg" style="border-radius:10px;" alt="Unable to Load" title="Display Picture">
+</div>
+<hr width = "100%">
+<h1>General&nbspInfo</h1>
+<hr width = "100%">
+<h1>Name:Mohsin&nbspAli&nbspSharif	</h1>
+<h2>Class:&nbspBSCS-2B	</h2>
+<h3>Father's&nbspName:&nbspMehmood&nbspAli	</h3>
+<h3>Address:Nust&nbspH-12	</h3>
+<h4>Contact&nbspNumber:+923414434422	</h4>
+<h4>Email:12bscsmsharif@seecs.edu.pk	</h4>
+<br>
+<br>
+<hr width = "100%">
+<h1>Objective	</h1>
+<hr width = "100%">
+<p> To practice and enhance my skills in the field of computer programming. </p>
+<br>
+<br>
+<hr width = "100%">
+<h1>Educational&nbspBackground </h1>
+<hr width = "100%">
+<table border="1">
+<tr>	
+<td>Serial	</td>
+<td>Degree/Class	</td>
+<td>Year	</td>
+<td>Institution	</td>
+<td>Marks&nbspObtained	</td>
+		</tr>
+<tr>	
+<td>i.	</td>
+<td>Matric	</td>
+<td>2010	</td>
+<td>GHS		</td>
+<td>A+		</td>
+		</tr>
+<tr>	
+<td>ii.	</td>
+<td>Intermediate	</td>
+<td>2012	</td>
+<td>GC		</td>
+<td>A		</td>
+		</tr>
+<tr>	
+<td>iii.	</td>
+<td>Graduation	</td>
+<td>Continued	</td>
+<td>NUST		</td>
+<td>-		</td>
+		</tr>
+</table>
+<br>
+<br>
+<hr width = "100%">
+<h1>Projects </h1>
+<hr width = "100%">
+<ul>
+<li>................................................................. </li>
+<li>................................................................. </li>
+<li>................................................................. </li>
+<li>................................................................. </li>
+
+</ul>
+<br>
+<br>
+<hr width = "100%">
+<h1>Accomplishments	</h1>
+<hr width = "100%">
+<ul>
+<li>................................................................. </li>
+<li>................................................................. </li>
+<li>................................................................. </li>
+<li>................................................................. </li>
+</ul>
+<br>
+<br>
+<hr width = "100%">
+<h1>Extra-Curricular Activities	</h1>
+<hr width = "100%">
+<ul>
+<li>................................................................. </li>
+<li>................................................................. </li>
+<li>................................................................. </li>
+<li>................................................................. </li>
+</ul>
+</div>
+<div class="boxevents">Events <br>
+<ul>
+<li>Event</li>
+<li>Event</li>
+<li>Event</li>
+<li>Event</li>
+
+</ul>
+</div> 
+</div>
+<p>Copyright &reg &nbsp  Mohsin Ali Sharif. </p>
+<div class = "footer">
+<footer>
+</footer>  
+
+</body>
+</html>
