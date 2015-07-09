@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="dist/html5shiv.js"></script>
+<style type="text/css">
+body{
+	background-color: White;
+	font-family: Helvetica;
+	font-size: 14px;
+}
+.boxevents{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+.navigation{
+        border-radius:10px;
+	text-decoration: none;
+	color: white;
+}
+.header{
+        border-radius:25px;
+        background: #8AC007;
+	font-family: Helvetica;
+	font-size: 40px;
+	text-align: centre;
+}
+.logo {
+    
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:0 0 ;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+.boxnews {
+        border-radius:25px;
+	float:left;
+	width:70%;
+	height:600px;
+	padding:10px;
+	border:3px solid Black;
+	margin:0px;
+}
+.boxevents {
+        border-radius:25px;
+	float:right;
+	width:25%;
+	height:600px;
+	padding:10px;
+	border:3px solid Black;
+	margin:0px;
+}
+.footer {
+color: white;
+}
+
+		</style>
+		</head>
+<body>
+<div class = "header">
+<header>
+
+<img src = "Logo.png" alt = "Website Logo" width = "80" height = "80"class = "logo">My Portfolio
+</header>
+</div>
+<hr>
+<div class = "navigation">
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href = "Index.html" style = "text-decoration: none;color:blue"> Home |</a> &nbsp
+<a href = "About.html" style = "text-decoration: none;color:blue">| About |</a> &nbsp
+<a href = "Gallery.html" style = "text-decoration: none;color:blue">| Gallery |</a> &nbsp
+<a href = "Contact.html" style = "text-decoration: none;color:blue">| Contact </a> 
+<a href = "http://www.facebook.com" target="_blank"style = "text-decoration: none;color:blue">| Facebook </a>
+</div>
+<hr>
+
+<div class = "wrapper">
+<div class="boxnews" style="background: #8AC007">who am I? <br>
+<ul>
+<li>I am a Human Being<br><br></li>
+<li>I live to eat, drink and play!<br><br></li>
+<li>I like coding!!<br><br></li>
+
+</ul>
+<article>
+<p>Finding your location: <span id="status">checking...</span></p>
+</article>
+
+
+<!-- 
+        Including JQuery; a fast, small, and feature-rich
+        JS lib. "Write less, do more."
+    -->
+     
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+     <script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Hello World",10,50);
+</script>
+<script>
+function success(position) {
+  var s = document.querySelector('#status');
+  
+  if (s.className == 'success') {
+    // not sure why we're hitting this twice in FF, I think it's to do with a cached result coming back    
+    return;
+  }
+  
+  s.innerHTML = "found you!";
+  s.className = 'success';
+  
+  var mapcanvas = document.createElement('div');
+  mapcanvas.id = 'mapcanvas';
+  mapcanvas.style.height = '400px';
+  mapcanvas.style.width = '560px';
+    
+  document.querySelector('article').appendChild(mapcanvas);
+  
+  var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  var myOptions = {
+    zoom: 15,
+    center: latlng,
+    mapTypeControl: false,
+    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+  
+  var marker = new google.maps.Marker({
+      position: latlng, 
+      map: map, 
+      title:"You are here! (at least within a "+position.coords.accuracy+" meter radius)"
+  });
+}
+
+function error(msg) {
+  var s = document.querySelector('#status');
+  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+  s.className = 'fail';
+  
+  // console.log(arguments);
+}
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success, error);
+} else {
+  error('not supported');
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</div>
+<div class="boxevents"style="background: #8AC007"> News <br>
+<ul>
+<li>Pakistan won against India  </li>
+<li>Nawaz Sharif Resigns</li>
+<li>Pakistan won T20 WordCup 2016 </li>
+
+</ul>
+</div> 
+</div>
+<p>Copyright &reg &nbsp Mohsin Ali Sharif </p>
+<div class = "footer">
+<footer>
+</footer>  
+<hr>
+</body>
+</html>
